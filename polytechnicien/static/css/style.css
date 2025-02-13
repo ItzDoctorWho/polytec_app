@@ -1,0 +1,186 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    text-align: center;
+}
+
+header {
+    background: #0044cc;
+    color: white;
+    padding: 20px 0;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin: 20px 0;
+}
+
+.hero-section {
+    background: url('https://prod.polytecsousse.tn/wp-content/uploads/2021/08/20210428_125603-scaled.jpg') no-repeat center center/cover;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.hero-section h2 {
+    font-size: 3em;
+    font-weight: bold;
+}
+
+.hero-section p {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: white;
+    background: #ff6600;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.btn:hover {
+    background: #cc5500;
+}
+
+footer {
+    background: #222;
+    color: white;
+    padding: 15px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 40px;
+}
+
+/* FORM CONTAINER */
+form {
+    background: #ffffff;
+    padding: 30px;
+    max-width: 500px;
+    margin: 40px auto;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* FORM GROUP (each input section) */
+.form-group {
+    margin-bottom: 20px; /* Adds spacing between form fields */
+}
+
+/* FORM INPUT FIELDS */
+form input,
+form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    display: block; /* Ensures fields don't align horizontally */
+}
+
+/* LABELS */
+form label {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    display: block; /* Makes sure labels are on top */
+    margin-bottom: 5px;
+}
+
+/* FORM BUTTONS */
+.form-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px; /* Adds space between buttons */
+}
+
+form input[type="submit"],
+form input[type="reset"] {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 12px 15px;
+    font-size: 16px;
+    flex: 1; /* Makes buttons equal in size */
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+form input[type="submit"]:hover {
+    background: #218838;
+}
+
+form input[type="reset"] {
+    background: #dc3545;
+}
+
+form input[type="reset"]:hover {
+    background: #c82333;
+}
+
+/* ERROR MESSAGES */
+.text-sm.text-red-600 {
+    color: red;
+    font-size: 14px;
+}
+
+/* IMAGE PREVIEW */
+form img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 10px 0;
+}
+
+.message {
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Style pour succès */
+.message.success {
+    background-color: #28a745;
+    color: white;
+}
+
+/* Style pour erreur */
+.message.error {
+    background-color: #dc3545;
+    color: white;
+}
+
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 500px) {
+    form {
+        padding: 20px;
+    }
+}

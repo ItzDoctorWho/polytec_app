@@ -1,0 +1,81 @@
+{% extends 'layout.html' %}
+{% block title %}Accueil{% endblock title %}
+
+{% block content %}
+<div class="hero-section">
+    <h2>Bienvenue sur Django Polytec!</h2>
+    <p>Créons quelque chose d'incroyable ensemble.</p>
+    <a href="#features" class="btn">Découvrir</a>
+</div>
+
+<section id="features">
+    <h1>Nos Avantages</h1>
+    <p>Découvrez pourquoi notre projet est unique.</p>
+</section>
+
+{% if messages %}
+    {% for message in messages %}
+        <div class="message {{ message.tags }}">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endif %}
+
+<section id="team">
+    <form action="/" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        <div class="form-group">
+            <label for="{{ form.picture.id_for_label }}">Une image de toi</label>
+            <img src="https://www.polytecsousse.tn/wp-content/uploads/2020/09/cropped-logo-polytech.png" alt="Profile Picture">
+            {{ form.picture }}
+        </div>
+
+        <div class="form-group">
+            <label for="{{ form.full_name.id_for_label }}">Nom et prénom:</label>
+            {{ form.full_name }}
+            <span class="text-sm text-red-600">{{ form.full_name.errors }}</span>
+        </div>
+
+        <div class="form-group">
+            <label for="{{ form.email.id_for_label }}">Email:</label>
+            {{ form.email }}
+            <span class="text-sm text-red-600">{{ form.email.errors }}</span>
+        </div>
+
+        <div class="form-group">
+            <label for="{{ form.facebook.id_for_label }}">Compte Facebook:</label>
+            {{ form.facebook }}
+            <span class="text-sm text-red-600">{{ form.facebook.errors }}</span>
+        </div>
+
+        <div class="form-group">
+            <label for="{{ form.twitter.id_for_label }}">Compte Twitter:</label>
+            {{ form.twitter }}
+            <span class="text-sm text-red-600">{{ form.twitter.errors }}</span>
+        </div>
+
+        <div class="form-group">
+            <label for="{{ form.linkedin.id_for_label }}">Compte LinkedIn:</label>
+            {{ form.linkedin }}
+            <span class="text-sm text-red-600">{{ form.linkedin.errors }}</span>
+        </div>
+
+        <div class="form-group">
+            <label for="{{ form.website.id_for_label }}">Site web:</label>
+            {{ form.website }}
+            <span class="text-sm text-red-600">{{ form.website.errors }}</span>
+        </div>
+
+        <div class="form-buttons">
+            <input type="submit" value="Valider">
+            <input type="reset" value="Reset">
+        </div>
+
+    </form>
+</section>
+
+
+
+
+{% endblock content %}
