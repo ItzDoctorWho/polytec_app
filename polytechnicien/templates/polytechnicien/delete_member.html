@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+
+{% block title %}Supprimer {{ member.full_name }}{% endblock title %}
+
+{% block content %}
+<h1 class="text-center text-danger">⚠ Supprimer {{ member.full_name }}</h1>
+<p class="text-center">Êtes-vous sûr de vouloir supprimer ce membre ? Cette action est irréversible.</p>
+
+<form action="" method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">🗑 Supprimer</button>
+    <a href="{% url 'members_list' %}" class="btn btn-secondary">❌ Annuler</a>
+</form>
+{% endblock content %}
