@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+
+{% block title %}Liste des Membres{% endblock title %}
+
+{% block content %}
+<h1 class="text-center">📜 Liste des Membres Inscrits</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Nom et Prénom</th>
+            <th>Email</th>
+            <th>Photo</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for member in members %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ member.full_name }}</td>
+            <td>{{ member.email }}</td>
+            <td>
+                {% if member.picture %}
+                    <img src="{{ member.picture.url }}" alt="Photo de {{ member.full_name }}" width="50">
+                {% else %}
+                    ❌ Pas d'image
+                {% endif %}
+            </td>
+            <td>
+                <a href="{% url 'update_member' member.id %}" class="btn btn-edit">✏ Modifier</a>
+                <a href="{% url 'delete_member' member.id %}" class="btn btn-delete" onclick="return confirm('Êtes-vous sûr de vouloir supprimer {{ member.full_name }} ?')">🗑 Supprimer</a>
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="5" class="text-center">Aucun membre enregistré.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<a href="{% url 'homepage' %}" class="btn btn-primary">⬅ Retour à l'accueil</a>
+{% endblock content %}
