@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+
+{% block title %}Modifier {{ member.full_name }}{% endblock title %}
+
+{% block content %}
+<h1 class="text-center">✏ Modifier {{ member.full_name }}</h1>
+
+<form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <button type="submit" class="btn btn-primary">✔ Enregistrer</button>
+    <a href="{% url 'members_list' %}" class="btn btn-secondary">❌ Annuler</a>
+</form>
+{% endblock content %}
